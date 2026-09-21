@@ -1,0 +1,27 @@
+{
+  "name": "academic-workspace-backend",
+  "version": "1.0.0",
+  "description": "Intelligent Collaborative Academic Workspace - Backend API Server",
+  "main": "src/server.js",
+  "type": "commonjs",
+  "scripts": {
+    "start": "node src/server.js",
+    "dev": "nodemon src/server.js"
+  },
+  "dependencies": {
+    "axios": "^1.7.9",
+    "bullmq": "^5.34.8",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.7",
+    "express": "^4.21.2",
+    "ioredis": "^5.4.2",
+    "mediasoup": "^3.15.3",
+    "mongoose": "^8.9.3",
+    "multer": "^1.4.5-lts.1",
+    "socket.io": "^4.8.1",
+    "zod": "^3.24.1"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.9"
+  }
+}
