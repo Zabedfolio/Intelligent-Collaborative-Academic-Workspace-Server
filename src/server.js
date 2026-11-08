@@ -1,13 +1,12 @@
+require('dotenv').config();
+
 const express = require('express');
 const http = require('http');
 const cors = require('cors');
-const dotenv = require('dotenv');
 const { Server } = require('socket.io');
 const { toNodeHandler } = require('better-auth/node');
 const { auth } = require('./lib/auth');
 const { requireAuth } = require('./middleware/authMiddleware');
-
-dotenv.config();
 
 const app = express();
 const server = http.createServer(app);

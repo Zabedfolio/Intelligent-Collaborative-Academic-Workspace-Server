@@ -1,3 +1,5 @@
+require('dotenv').config();
+
 const { betterAuth } = require('better-auth');
 const { mongodbAdapter } = require('@better-auth/mongo-adapter');
 const { MongoClient } = require('mongodb');
