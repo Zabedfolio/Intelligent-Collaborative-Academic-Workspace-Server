@@ -9,7 +9,11 @@
     "dev": "nodemon src/server.js"
   },
   "dependencies": {
+    "@better-auth/core": "^1.7.18",
+    "@better-auth/mongo-adapter": "^1.7.18",
     "axios": "^1.7.9",
+    "better-auth": "^1.7.18",
+    "better-call": "^1.4.5",
     "bullmq": "^5.34.8",
     "cors": "^2.8.5",
     "dotenv": "^16.4.7",
