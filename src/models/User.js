@@ -74,3 +74,4 @@ userSchema.methods.toSafeObject = function () {
 };
 
 module.exports = mongoose.model('User', userSchema);
+
