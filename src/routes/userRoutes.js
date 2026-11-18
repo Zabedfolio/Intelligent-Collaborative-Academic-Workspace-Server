@@ -15,3 +15,4 @@ router.put('/availability', requireAuth, updateAvailability);
 router.put('/scope', requireAuth, updateLastScope);
 
 module.exports = router;
+

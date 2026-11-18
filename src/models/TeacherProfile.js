@@ -49,3 +49,4 @@ teacherProfileSchema.methods.toSafeObject = function () {
 };
 
 module.exports = mongoose.model('TeacherProfile', teacherProfileSchema);
+

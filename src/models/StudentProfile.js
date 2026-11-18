@@ -66,3 +66,4 @@ studentProfileSchema.methods.toSafeObject = function () {
 };
 
 module.exports = mongoose.model('StudentProfile', studentProfileSchema);
+
