@@ -6,13 +6,20 @@ const cors = require('cors');
 const { Server } = require('socket.io');
 const { toNodeHandler } = require('better-auth/node');
 const { auth } = require('./lib/auth');
-const { requireAuth } = require('./middleware/authMiddleware');
+const connectDB = require('./config/db');
+const authRoutes = require('./routes/authRoutes');
+const userRoutes = require('./routes/userRoutes');
+const hierarchyRoutes = require('./routes/hierarchyRoutes');
+const courseRoutes = require('./routes/courseRoutes');
 
 const app = express();
 const server = http.createServer(app);
 const io = new Server(server, {
   cors: { origin: '*' }
 });
+
+// Connect to MongoDB Atlas
+connectDB();
 
 // Enable CORS for Next.js frontend with cookie credentials
 app.use(
@@ -36,14 +43,11 @@ app.get('/health', (req, res) => {
   });
 });
 
-// Protected Session Route
-app.get('/api/v1/auth/me', requireAuth, (req, res) => {
-  res.json({
-    status: 'success',
-    user: req.user,
-    session: req.session
-  });
-});
+// Mount V1 API Routes
+app.use('/api/v1/auth', authRoutes);
+app.use('/api/v1/users', userRoutes);
+app.use('/api/v1/hierarchy', hierarchyRoutes);
+app.use('/api/v1/courses', courseRoutes);
 
 io.on('connection', (socket) => {
   console.log(`Socket connected: ${socket.id}`);
